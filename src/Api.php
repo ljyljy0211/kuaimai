@@ -84,7 +84,7 @@ class Api extends AbstractAPI
             case 'hmac-sha256':
                 return strtoupper(hash_hmac('sha256', $paramsStr, $this->appSecret));
             default:
-                throw new Exception('加密方式不存咋');
+                throw new Exception('undefined sign method!');
         }
     }
 }
