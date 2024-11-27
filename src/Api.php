@@ -39,7 +39,7 @@ class Api extends AbstractAPI
         $commonParams = $this->getCommonParams($method);
         $params = array_merge($params, $commonParams);
         $params['sign'] = $this->signature($params);
-        $response = call_user_func_array([$http, 'POST'], [$this->baseUrl, $params]);
+        $response = call_user_func_array([$http, 'post'], [$this->baseUrl, $params]);
 
         return json_decode($response->getBody(), true);
     }
